@@ -21,8 +21,8 @@ export function PaymentRedirectForm({
     <div className="rounded-3xl border border-brand-100 bg-white p-8 shadow-soft">
       <h1 className="text-2xl font-semibold text-ink">Redirecting to eSewa</h1>
       <p className="mt-3 text-slate-600">
-        Your booking details are ready. You will be redirected to eSewa securely
-        in a moment.
+        Your booking details are ready. You will be redirected to eSewa in a
+        moment to complete your payment securely.
       </p>
       <form ref={formRef} action={action} method="POST" className="mt-6 space-y-2">
         {Object.entries(fields).map(([key, value]) => (
@@ -32,7 +32,7 @@ export function PaymentRedirectForm({
           type="submit"
           className="rounded-full bg-brand-700 px-5 py-3 font-semibold text-white"
         >
-          Continue to eSewa
+          Continue to Payment
         </button>
       </form>
     </div>

@@ -24,6 +24,9 @@ import {
 export async function signInAdminAction(formData: FormData) {
   const email = String(formData.get("email") || "");
   const password = String(formData.get("password") || "");
+  const next = String(formData.get("next") || "");
+  const safeNext =
+    next.startsWith("/") && !next.startsWith("//") ? next : "/admin";
 
   const supabase = await createSupabaseServerClient();
   const { error } = await supabase.auth.signInWithPassword({
@@ -32,10 +35,12 @@ export async function signInAdminAction(formData: FormData) {
   });
 
   if (error) {
-    redirect(`/admin/login?error=${encodeURIComponent(error.message)}`);
+    redirect(
+      `/admin/login?error=${encodeURIComponent(error.message)}&next=${encodeURIComponent(safeNext)}`
+    );
   }
 
-  redirect("/admin");
+  redirect(safeNext);
 }
 
 export async function signOutAdminAction() {

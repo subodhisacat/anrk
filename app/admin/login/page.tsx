@@ -6,11 +6,12 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 type LoginPageProps = {
   searchParams: Promise<{
     error?: string;
+    next?: string;
   }>;
 };
 
 export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
-  const { error } = await searchParams;
+  const { error, next } = await searchParams;
   const supabase = await createSupabaseServerClient();
   const {
     data: { user }
@@ -32,6 +33,15 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
         </p>
 
         <form action={signInAdminAction} className="mt-8 space-y-4">
+          <input
+            type="hidden"
+            name="next"
+            value={
+              next && next.startsWith("/") && !next.startsWith("//")
+                ? next
+                : "/admin"
+            }
+          />
           <label className="block space-y-2">
             <span className="text-sm font-medium text-ink">Email</span>
             <input

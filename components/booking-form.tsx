@@ -22,7 +22,7 @@ function SubmitButton() {
       disabled={pending}
       className="w-full rounded-2xl bg-brand-700 px-5 py-4 font-semibold text-white transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-70"
     >
-      {pending ? "Preparing eSewa payment..." : "Continue to eSewa Payment"}
+      {pending ? "Preparing secure payment..." : "Continue to Secure Payment"}
     </button>
   );
 }
@@ -172,8 +172,8 @@ export function BookingForm({ doctors, bookingFee }: BookingFormProps) {
         </span>
         <h3 className="mt-5 text-2xl font-semibold">Secure online booking</h3>
         <p className="mt-3 text-brand-100">
-          Appointment is saved only after eSewa payment succeeds and the
-          transaction is verified on the server.
+          Your appointment is confirmed only after your eSewa payment is
+          successfully verified.
         </p>
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-5">
@@ -189,7 +189,7 @@ export function BookingForm({ doctors, bookingFee }: BookingFormProps) {
         <ul className="mt-8 space-y-3 text-sm text-brand-50">
           <li>Dynamic time slots prevent double booking.</li>
           <li>Email is mandatory for automated appointment updates.</li>
-          <li>Admin can confirm, cancel, reschedule, and send custom emails.</li>
+          <li>Our team can confirm, cancel, reschedule, and send email updates.</li>
         </ul>
       </aside>
     </div>

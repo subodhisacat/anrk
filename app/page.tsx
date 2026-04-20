@@ -18,7 +18,7 @@ const features = [
     icon: CreditCard,
     title: "Verified eSewa payments",
     description:
-      "Appointments are stored only after the eSewa success callback is verified on the server."
+      "Appointments are confirmed only after your eSewa payment is verified securely."
   },
   {
     icon: MailCheck,
@@ -102,31 +102,31 @@ export default async function HomePage() {
 
         <div className="rounded-[28px] bg-brand-900 p-8 text-white">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-100">
-            Workflow
+            How Booking Works
           </p>
           <ol className="mt-6 space-y-5">
             <li>
-              <p className="font-semibold">1. Patient books a slot</p>
+              <p className="font-semibold">1. Choose your doctor and time</p>
               <p className="text-sm text-brand-100">
-                Doctor, date, and time are selected from dynamic availability.
+                Pick your doctor, preferred date, and an available time slot.
               </p>
             </li>
             <li>
-              <p className="font-semibold">2. Patient pays with eSewa</p>
+              <p className="font-semibold">2. Pay securely with eSewa</p>
               <p className="text-sm text-brand-100">
-                The system redirects to the eSewa test gateway with signed fields.
+                Complete your booking payment through eSewa in a secure checkout.
               </p>
             </li>
             <li>
-              <p className="font-semibold">3. Server verifies payment</p>
+              <p className="font-semibold">3. Get instant booking confirmation</p>
               <p className="text-sm text-brand-100">
-                The success callback is validated before the appointment is saved.
+                Once payment is confirmed, your appointment is booked automatically.
               </p>
             </li>
             <li>
-              <p className="font-semibold">4. Admin manages the booking</p>
+              <p className="font-semibold">4. Receive updates when needed</p>
               <p className="text-sm text-brand-100">
-                Confirm, cancel, reschedule, and send custom emails from the dashboard.
+                Our team can help with confirmations, rescheduling, cancellations, and email updates.
               </p>
             </li>
           </ol>

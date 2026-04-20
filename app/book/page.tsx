@@ -11,7 +11,7 @@ export default async function BookPage() {
       <SectionHeading
         eyebrow="Appointment"
         title="Book a dental appointment"
-        description="Fill in the patient details, choose a dentist and time slot, then continue to eSewa. The appointment is stored only after payment verification succeeds."
+        description="Fill in your details, choose a dentist and time slot, then continue to secure eSewa payment. Your appointment is confirmed once the payment is successfully verified."
       />
       <BookingForm doctors={doctors} bookingFee={bookingFee} />
     </div>

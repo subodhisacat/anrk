@@ -37,8 +37,8 @@ export default async function PaymentSuccessPage({
           Your appointment is booked
         </h1>
         <p className="mt-4 text-slate-600">
-          We have verified your eSewa payment and saved your appointment.
-          A confirmation email has been sent to {appointment.email}.
+          Your eSewa payment has been confirmed and your appointment is now
+          booked. A confirmation email has been sent to {appointment.email}.
         </p>
         <div className="mt-6 rounded-3xl bg-brand-50 p-6">
           <p>
@@ -78,7 +78,7 @@ export default async function PaymentSuccessPage({
     return (
       <div className="mx-auto max-w-2xl rounded-3xl border border-red-200 bg-white p-8 shadow-soft">
         <h1 className="text-2xl font-semibold text-ink">
-          Payment verification problem
+          We could not confirm the payment
         </h1>
         <p className="mt-3 text-slate-600">
           {(error as Error).message}

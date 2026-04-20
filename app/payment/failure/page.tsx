@@ -5,8 +5,8 @@ export default function PaymentFailurePage() {
     <div className="mx-auto max-w-2xl rounded-3xl border border-red-200 bg-white p-8 shadow-soft">
       <h1 className="text-2xl font-semibold text-ink">Payment was not completed</h1>
       <p className="mt-3 text-slate-600">
-        No appointment was stored because eSewa returned a failure or pending
-        state. You can safely try again with another time slot if needed.
+        Your appointment was not booked because the payment was not completed.
+        You can safely try again with another time slot if needed.
       </p>
       <Link
         href="/book"

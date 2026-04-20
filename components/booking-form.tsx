@@ -184,10 +184,6 @@ export function BookingForm({ doctors, bookingFee }: BookingFormProps) {
             </span>
           </div>
           <p className="mt-3 text-3xl font-semibold">{toCurrency(bookingFee)}</p>
-          <p className="mt-2 text-sm text-brand-100">
-            The fee is collected in eSewa test mode first. Change the merchant
-            settings in `.env.local` before production launch.
-          </p>
         </div>
 
         <ul className="mt-8 space-y-3 text-sm text-brand-50">

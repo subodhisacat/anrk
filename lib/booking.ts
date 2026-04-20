@@ -3,6 +3,8 @@ import { format } from "date-fns";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import type {
   AppointmentWithDoctor,
+  DoctorRelation,
+  HydratedAppointment,
   Doctor,
   PaymentSession
 } from "@/lib/types";
@@ -87,7 +89,7 @@ export async function getAppointmentWithDoctor(appointmentId: string) {
     throw new Error("Appointment not found.");
   }
 
-  return data as AppointmentWithDoctor;
+  return normalizeAppointmentWithDoctor(data as AppointmentWithDoctor);
 }
 
 export async function getPaymentSessionById(sessionId: string) {
@@ -192,4 +194,23 @@ export async function finalizeEsewaPayment(encodedData: string) {
   });
 
   return hydratedAppointment;
+}
+
+export function getDoctorRelation(
+  doctors: AppointmentWithDoctor["doctors"]
+): DoctorRelation | null {
+  if (!doctors) {
+    return null;
+  }
+
+  return Array.isArray(doctors) ? doctors[0] ?? null : doctors;
+}
+
+export function normalizeAppointmentWithDoctor(
+  appointment: AppointmentWithDoctor
+): HydratedAppointment {
+  return {
+    ...appointment,
+    doctor: getDoctorRelation(appointment.doctors)
+  };
 }

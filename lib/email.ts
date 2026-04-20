@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import { Resend } from "resend";
 
 import { CLINIC } from "@/lib/constants";
-import type { AppointmentWithDoctor } from "@/lib/types";
+import type { HydratedAppointment } from "@/lib/types";
 import { clinicContactLine, formatDisplayDateTime } from "@/lib/utils";
 
 function getResendClient() {
@@ -71,7 +71,7 @@ export async function sendClinicEmail({
 function appointmentEmailHtml(
   title: string,
   intro: string,
-  appointment: AppointmentWithDoctor,
+  appointment: HydratedAppointment,
   extraHtml?: string
 ) {
   return `
@@ -80,7 +80,7 @@ function appointmentEmailHtml(
       <p>${intro}</p>
       <div style="padding: 16px; border-radius: 14px; background: #f4fbfa; border: 1px solid #d9f0ec;">
         <p><strong>Patient:</strong> ${appointment.patient_name}</p>
-        <p><strong>Doctor:</strong> ${appointment.doctors?.name || "Assigned doctor"}</p>
+        <p><strong>Doctor:</strong> ${appointment.doctor?.name || "Assigned doctor"}</p>
         <p><strong>Date & Time:</strong> ${formatDisplayDateTime(
           appointment.appointment_date,
           appointment.appointment_time
@@ -98,7 +98,7 @@ function appointmentEmailHtml(
 function appointmentEmailText(
   title: string,
   intro: string,
-  appointment: AppointmentWithDoctor,
+  appointment: HydratedAppointment,
   extraText?: string
 ) {
   return `${title}
@@ -106,7 +106,7 @@ function appointmentEmailText(
 ${intro}
 
 Patient: ${appointment.patient_name}
-Doctor: ${appointment.doctors?.name || "Assigned doctor"}
+Doctor: ${appointment.doctor?.name || "Assigned doctor"}
 Date & Time: ${formatDisplayDateTime(
     appointment.appointment_date,
     appointment.appointment_time
@@ -123,7 +123,7 @@ export async function sendAppointmentStatusEmail({
   status,
   customMessage
 }: {
-  appointment: AppointmentWithDoctor;
+  appointment: HydratedAppointment;
   status: "booked" | "confirmed" | "cancelled" | "rescheduled";
   customMessage?: string;
 }) {
@@ -166,7 +166,7 @@ export async function sendCustomAppointmentEmail({
   subject,
   message
 }: {
-  appointment: AppointmentWithDoctor;
+  appointment: HydratedAppointment;
   subject: string;
   message: string;
 }) {

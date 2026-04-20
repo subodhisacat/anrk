@@ -1,6 +1,6 @@
 import { TIME_SLOTS } from "@/lib/time-slots";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
-import { getDoctors } from "@/lib/booking";
+import { getDoctors, normalizeAppointmentWithDoctor } from "@/lib/booking";
 import {
   rescheduleAppointmentAction,
   sendCustomEmailAction,
@@ -49,6 +49,11 @@ export default async function AdminDashboardPage({
     throw new Error(error.message);
   }
 
+  const normalizedAppointments =
+    appointments?.map((appointment) =>
+      normalizeAppointmentWithDoctor(appointment)
+    ) || [];
+
   return (
     <div className="space-y-8">
       <section className="rounded-[28px] border border-brand-100 bg-white p-6 shadow-soft">
@@ -96,8 +101,8 @@ export default async function AdminDashboardPage({
       </section>
 
       <section className="space-y-5">
-        {appointments?.length ? (
-          appointments.map((appointment) => (
+        {normalizedAppointments.length ? (
+          normalizedAppointments.map((appointment) => (
             <article
               key={appointment.id}
               className="rounded-[28px] border border-brand-100 bg-white p-6 shadow-soft"
@@ -119,8 +124,8 @@ export default async function AdminDashboardPage({
                     {appointment.email} | {appointment.phone}
                   </p>
                   <p className="mt-2 text-slate-700">
-                    <strong>Doctor:</strong> {appointment.doctors?.name} (
-                    {appointment.doctors?.specialization})
+                    <strong>Doctor:</strong> {appointment.doctor?.name} (
+                    {appointment.doctor?.specialization})
                   </p>
                   <p className="mt-2 text-slate-700">
                     <strong>Schedule:</strong>{" "}

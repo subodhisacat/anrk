@@ -45,7 +45,7 @@ export default async function PaymentSuccessPage({
             <strong>Patient:</strong> {appointment.patient_name}
           </p>
           <p className="mt-2">
-            <strong>Doctor:</strong> {appointment.doctors?.name}
+            <strong>Doctor:</strong> {appointment.doctor?.name}
           </p>
           <p className="mt-2">
             <strong>Date & Time:</strong>{" "}

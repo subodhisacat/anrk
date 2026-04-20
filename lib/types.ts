@@ -32,11 +32,28 @@ export type Appointment = {
 };
 
 export type AppointmentWithDoctor = Appointment & {
-  doctors: {
-    id: string;
-    name: string;
-    specialization: string;
-  } | null;
+  doctors:
+    | {
+        id: string;
+        name: string;
+        specialization: string;
+      }
+    | {
+        id: string;
+        name: string;
+        specialization: string;
+      }[]
+    | null;
+};
+
+export type DoctorRelation = {
+  id: string;
+  name: string;
+  specialization: string;
+};
+
+export type HydratedAppointment = Appointment & {
+  doctor: DoctorRelation | null;
 };
 
 export type PaymentSession = {

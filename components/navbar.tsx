@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -21,8 +22,17 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 py-4 text-white sm:px-6 lg:px-8">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <Link href="/" className="text-lg font-semibold tracking-wide">
-              {CLINIC.name}
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo.jpg"
+                alt={`${CLINIC.name} logo`}
+                width={52}
+                height={52}
+                className="h-12 w-12 rounded-full border border-white/15 bg-white object-cover"
+              />
+              <span className="text-lg font-semibold tracking-wide">
+                {CLINIC.name}
+              </span>
             </Link>
             <p className="mt-1 max-w-[12rem] text-xs leading-relaxed text-brand-100 sm:max-w-none">
               {CLINIC.location}

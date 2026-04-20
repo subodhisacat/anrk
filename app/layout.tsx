@@ -16,7 +16,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: `${CLINIC.name} | Clinic Appointment Booking`,
   description:
-    "Book dental appointments online, pay securely with eSewa, and manage bookings through a Supabase-powered admin panel."
+    "Book dental appointments online, pay securely with eSewa, and manage bookings through a Supabase-powered admin panel.",
+  icons: {
+    icon: "/logo.jpg",
+    apple: "/logo.jpg"
+  }
 };
 
 export const viewport: Viewport = {

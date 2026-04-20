@@ -29,7 +29,7 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
         </p>
         <h1 className="mt-3 text-3xl font-semibold text-ink">Admin Login</h1>
         <p className="mt-3 text-sm text-slate-600">
-          Sign in with the Supabase Auth admin account created for the clinic.
+          Sign in with the clinic's admin account to manage appointments and doctors.
         </p>
 
         <form action={signInAdminAction} className="mt-8 space-y-4">

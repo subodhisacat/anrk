@@ -15,8 +15,8 @@ export function Footer() {
         </div>
         <div>
           <h3 className="font-semibold text-ink">Hours</h3>
-          <p className="mt-2">Sunday to Friday</p>
-          <p>09:00 AM to 05:30 PM</p>
+          <p className="mt-2">Every day</p>
+          <p>09:00 AM to 06:00 PM</p>
         </div>
       </div>
     </footer>

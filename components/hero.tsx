@@ -14,8 +14,8 @@ export function Hero() {
           Book your dental appointment online with {CLINIC.name}.
         </h1>
         <p className="mt-5 max-w-2xl text-base text-brand-50 sm:text-lg">
-          Modern appointment booking, secure eSewa checkout, fast email
-          notifications, and a clean admin dashboard for your clinic team.
+          Quick online booking, secure eSewa payment, and clear appointment
+          updates to make your visit easier from start to finish.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link

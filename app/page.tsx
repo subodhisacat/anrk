@@ -28,9 +28,9 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "Protected admin panel",
+    title: "Helpful clinic support",
     description:
-      "Supabase Auth protects the clinic dashboard for managing doctors and appointments."
+      "Our clinic team can help with appointments, scheduling updates, and follow-up support."
   }
 ];
 
@@ -66,7 +66,7 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Clinic"
             title="Dental care with a smoother booking experience"
-            description="This system gives ANRK Dental Care Clinic a polished online presence with booking, payments, notifications, and admin tools in one place."
+            description="Book appointments online, reach the clinic easily, and get timely updates before and after your visit."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl bg-brand-50 p-5">
@@ -95,7 +95,7 @@ export default async function HomePage() {
               href="/admin"
               className="rounded-full border border-brand-200 px-5 py-3 font-semibold text-brand-700"
             >
-              Admin Dashboard
+              Clinic Team Login
             </Link>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default async function HomePage() {
         <SectionHeading
           eyebrow="Doctors"
           title="Available dentists"
-          description="Doctor profiles are loaded from Supabase and can be managed directly from the admin panel."
+          description="Meet the dentists available for consultation and choose the one that fits your needs."
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {doctors.map((doctor) => (

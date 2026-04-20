@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { WhatsAppFloatingButton } from "@/components/whatsapp-floating-button";
 import { CLINIC } from "@/lib/constants";
 
 const poppins = Poppins({
@@ -34,6 +35,7 @@ export default function RootLayout({
             </div>
           </main>
           <Footer />
+          <WhatsAppFloatingButton />
         </div>
       </body>
     </html>

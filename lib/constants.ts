@@ -2,7 +2,8 @@ export const CLINIC = {
   name: "ANRK Dental Care Clinic",
   location: "Radhe Radhe, Bhaktapur, Nepal",
   phones: ["9866049030", "015926536"],
-  email: "appointments@anrkdental.com"
+  email: "appointments@anrkdental.com",
+  whatsappPhone: "9779866049030"
 };
 
 export const APPOINTMENT_STATUSES = [

@@ -15,8 +15,13 @@ export function WhatsAppFloatingButton() {
       aria-label="Chat with ANRK Dental Care Clinic on WhatsApp"
       className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(37,211,102,0.32)] transition hover:scale-[1.02] hover:bg-[#1ebe5d] sm:bottom-6 sm:right-6"
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/18 text-lg">
-        W
+      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/18">
+        <img
+          src="https://www.logo.wine/a/logo/WhatsApp/WhatsApp-Logo.wine.svg"
+          alt=""
+          aria-hidden="true"
+          className="h-6 w-6 object-contain"
+        />
       </span>
       <span className="hidden sm:inline">Chat on WhatsApp</span>
     </Link>
